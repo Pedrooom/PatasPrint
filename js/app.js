@@ -126,13 +126,6 @@
           downloadHtml = '<div class="downloads-modelo">' + downloadHtml + "</div>";
         }
 
-        const montagemHtml = modelo.imagens.montagem
-          ? '<figure class="figura-simulacao">' +
-              imagemComFallback(modelo.imagens.montagem, "Simulação de " + modelo.nome + " em uso", "imagem-montagem") +
-              '<figcaption>Simulação: modelo 3D sobreposto a foto real</figcaption>' +
-            "</figure>"
-          : "";
-
         const indicadoHtml = modelo.indicadoPara
           ? '<p class="ficha-linha"><strong>Indicado para:</strong> ' + modelo.indicadoPara + "</p>"
           : "";
@@ -158,7 +151,6 @@
                 indicadoHtml +
                 '<p class="ficha-linha"><strong>Tamanhos disponíveis:</strong> ' + portesTexto + "</p>" +
                 linhaOrigem +
-                montagemHtml +
                 downloadHtml +
               "</div>" +
             "</article>" +
@@ -304,15 +296,6 @@
   }
 
   // -----------------------------------------------------------------
-  // Aviso de simulação no rodapé: só aparece se houver foto de montagem
-  // -----------------------------------------------------------------
-  function ajustarAvisoSimulacao() {
-    const aviso = document.getElementById("aviso-simulacao");
-    if (!aviso) return;
-    aviso.hidden = !DADOS.modelos.some(function (m) { return m.imagens.montagem; });
-  }
-
-  // -----------------------------------------------------------------
   // Menu no celular: fecha ao tocar em um item
   // -----------------------------------------------------------------
   function configurarMenu() {
@@ -334,7 +317,6 @@
     montarProblema();
     montarCatalogo();
     montarEtapasPet();
-    ajustarAvisoSimulacao();
     configurarMenu();
 
     popularSelectModelos();

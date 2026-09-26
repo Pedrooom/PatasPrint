@@ -347,23 +347,6 @@ a:focus {
   margin: 0;
 }
 
-.figura-simulacao {
-  margin: 0.6rem 0 0;
-}
-
-.figura-simulacao .imagem-montagem,
-.figura-simulacao .imagem-pendente {
-  aspect-ratio: 16 / 10;
-  border-radius: 6px;
-}
-
-.figura-simulacao figcaption {
-  font-size: 0.8rem;
-  color: var(--cor-texto-suave);
-  font-style: italic;
-  margin-top: 0.35rem;
-}
-
 .btn-primario {
   margin-top: auto;
   align-self: flex-start;
@@ -554,14 +537,6 @@ a:focus {
 .rodape a:hover,
 .rodape a:focus {
   color: #fff;
-}
-
-.rodape .aviso-simulacao {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  font-size: 0.82rem;
-  color: #C9C6B6;
 }
 
 @media (max-width: 767px) {

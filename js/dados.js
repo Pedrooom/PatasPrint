@@ -69,10 +69,7 @@ const DADOS = {
       formatoArquivo: ".3mf", // projeto do Bambu Studio, já com o perfil de impressão
       downloads: null,
       imagens: {
-        render: "img/comedouro-render.jpg",
-        // TODO_PEDRO: foto do comedouro impresso sobreposta a uma foto real, salva como
-        // "img/comedouro-montagem.jpg" (a legenda de simulação é adicionada automaticamente)
-        montagem: null
+        render: "img/comedouro-render.jpg"
       },
       // arquivo: link de download direto do Google Drive
       // massaG e tempoMin: fatiamento no Bambu Studio, perfil A1 / PETG
@@ -119,8 +116,7 @@ const DADOS = {
       impressoes: 20,
       imagens: {
         render: "img/cadeira-rodas-gato-render.jpg",
-        creditoImagem: "Imagem: ac.design3D, MakerWorld",
-        montagem: null
+        creditoImagem: "Imagem: ac.design3D, MakerWorld"
       },
       portes: {
         Unico: {
@@ -146,8 +142,7 @@ const DADOS = {
       impressoes: 96,
       imagens: {
         render: "img/tala-pata-dianteira-render.jpg",
-        creditoImagem: "Imagem: TheLayerSlayer, MakerWorld",
-        montagem: null
+        creditoImagem: "Imagem: TheLayerSlayer, MakerWorld"
       },
       portes: {
         Unico: {
@@ -173,8 +168,7 @@ const DADOS = {
       impressoes: 46,
       imagens: {
         render: "img/tala-pata-traseira-render.jpg",
-        creditoImagem: "Imagem: TheLayerSlayer, MakerWorld",
-        montagem: null
+        creditoImagem: "Imagem: TheLayerSlayer, MakerWorld"
       },
       portes: {
         Unico: {

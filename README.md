@@ -55,8 +55,7 @@ Não precisa de servidor nem de instalação. Duas opções:
 Os itens pendentes estão marcados com `TODO_PEDRO` dentro de `js/dados.js`:
 
 - massa (g) e tempo (min) de impressão dos três modelos de terceiros,
-  refatiados em PETG no Bambu Studio;
-- foto de montagem do comedouro (`img/comedouro-montagem.jpg`).
+  refatiados em PETG no Bambu Studio.
 
 ## Publicar no GitHub Pages
 

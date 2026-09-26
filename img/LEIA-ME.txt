@@ -1,15 +1,7 @@
 Imagens do catálogo. Os nomes abaixo são os usados em js/dados.js.
-Ainda falta a foto de montagem do comedouro (comedouro-montagem.jpg).
-
-Imagens esperadas (nomes usados em js/dados.js):
 
 - comedouro-render.jpg
-    Render 3D do comedouro elevado (qualquer porte).
-
-- comedouro-montagem.jpg
-    Foto do comedouro impresso, em uso ou simulado sobre uma foto real.
-    O site já adiciona sozinho a legenda "Simulação: modelo 3D sobreposto
-    a foto real" — não precisa incluir isso na imagem.
+    Render 3D do comedouro elevado.
 
 Modelos de terceiros, escolhidos nos repositórios abertos (MakerWorld e
 Printables), respeitando a licença de cada modelo. O crédito da imagem já
@@ -26,4 +18,3 @@ aparece no site, a partir do campo "creditoImagem" em js/dados.js:
 
 Ao adicionar um novo modelo de terceiro em js/dados.js, inclua a imagem
 correspondente aqui e aponte o caminho no campo "imagens" daquele modelo.
-Depois de colocar as imagens de verdade, pode apagar este arquivo.
