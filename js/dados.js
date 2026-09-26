@@ -1,9 +1,9 @@
 /**
  * js/dados.js
  * -----------
- * Todos os números e links que dependem de pesquisa ou de material do Pedro
- * ficam neste arquivo só. Procure por "TODO_PEDRO" para achar tudo que falta.
- * Depois de preencher, não precisa mexer em nenhum outro arquivo do site.
+ * Todos os números, links e fontes do site ficam neste arquivo só.
+ * Para atualizar um dado ou incluir um modelo, não precisa mexer em
+ * nenhum outro arquivo.
  */
 
 const DADOS = {
@@ -95,8 +95,8 @@ const DADOS = {
     // Modelos de terceiros: para adicionar outro, duplique um dos blocos abaixo.
     // Regra do projeto: só entra no catálogo modelo com licença Creative Commons que
     // permita adaptação (CC BY, CC BY-SA, CC BY-NC ou CC BY-NC-SA). Licenças ND ficam de fora.
-    // massaG e tempoMin ficam null porque o perfil original é PLA.
-    // TODO_PEDRO: refatiar os três em PETG no Bambu Studio e preencher massaG e tempoMin.
+    // massaG e tempoMin: perfil de impressão do designer no MakerWorld (feito em PLA;
+    // a massa em PETG é a mesma). Consulta em 26 set. 2026.
     {
       id: "cadeira-rodas-gato",
       nome: "Parametric Cat Wheelchair Generator",
@@ -107,6 +107,7 @@ const DADOS = {
       plataforma: "MakerWorld",
       link: "https://makerworld.com/en/models/3111262-parametric-cat-wheelchair-generator",
       licenca: "CC BY-NC-SA 4.0",
+      fonteMassa: "perfil de impressão do designer no MakerWorld (a massa em PETG é a mesma)",
       // Referência de preço de mercado para cadeiras de rodas, mostrada na calculadora
       referenciaMercado: {
         texto: "Uma cadeira de rodas comercial para cães custa a partir de R$ 1.200. Uma versão equivalente impressa em 3D sai por cerca de R$ 448,81.",
@@ -120,8 +121,8 @@ const DADOS = {
       },
       portes: {
         Unico: {
-          massaG: null,
-          tempoMin: null,
+          massaG: 81,
+          tempoMin: 138,
           arquivo: null, // download pela página do modelo (campo "link")
           precoMercado: null
         }
@@ -138,6 +139,7 @@ const DADOS = {
       plataforma: "MakerWorld",
       link: "https://makerworld.com/en/models/2835397-dog-splint-front-v1",
       licenca: "CC BY-NC-SA 4.0",
+      fonteMassa: "perfil de impressão do designer no MakerWorld (a massa em PETG é a mesma)",
       downloads: 215,
       impressoes: 96,
       imagens: {
@@ -146,8 +148,8 @@ const DADOS = {
       },
       portes: {
         Unico: {
-          massaG: null,
-          tempoMin: null,
+          massaG: 74,
+          tempoMin: 162,
           arquivo: null, // download pela página do modelo (campo "link")
           precoMercado: null
         }
@@ -164,6 +166,7 @@ const DADOS = {
       plataforma: "MakerWorld",
       link: "https://makerworld.com/en/models/2843857-dog-splint-rear-leg",
       licenca: "CC BY-NC-SA 4.0",
+      fonteMassa: "perfil de impressão do designer no MakerWorld (a massa em PETG é a mesma)",
       downloads: 145,
       impressoes: 46,
       imagens: {
@@ -172,8 +175,8 @@ const DADOS = {
       },
       portes: {
         Unico: {
-          massaG: null,
-          tempoMin: null,
+          massaG: 104,
+          tempoMin: 270,
           arquivo: null, // download pela página do modelo (campo "link")
           precoMercado: null
         }

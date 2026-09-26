@@ -50,13 +50,6 @@ Não precisa de servidor nem de instalação. Duas opções:
    python3 -m http.server 8000
    ```
 
-## O que ainda falta
-
-Os itens pendentes estão marcados com `TODO_PEDRO` dentro de `js/dados.js`:
-
-- massa (g) e tempo (min) de impressão dos três modelos de terceiros,
-  refatiados em PETG no Bambu Studio.
-
 ## Publicar no GitHub Pages
 
 1. Suba os arquivos para um repositório público no GitHub.

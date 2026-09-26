@@ -254,7 +254,8 @@
       "</div>" +
       '<p class="resultado-comparacao">' + comparacaoHtml + "</p>" +
       '<p class="resultado-premissas">' +
-        "Premissas: massa e tempo de impressão vêm do fatiamento no Bambu Studio (perfil A1, PETG). " +
+        "Premissas: massa de filamento — " +
+          (modelo.fonteMassa || "fatiamento no Bambu Studio (perfil A1, PETG)") + ". " +
         "Preço do filamento — " + (DADOS.filamento.fonte || "") + ". " +
         "Massa da garrafa PET — " + (DADOS.garrafaPet.fonte || "") + ". " +
         "Todos os resultados são estimativas." +
