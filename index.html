@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PatasPrint — impressão 3D para animais de Novo Hamburgo/RS</title>
+  <meta name="description" content="Catálogo de dispositivos 3D, calculadora de custo e formulário de solicitação de peças para a rede de proteção animal de Novo Hamburgo/RS.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <a class="link-pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <nav class="navbar navbar-expand-lg navbar-patasprint sticky-top" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio">PatasPrint</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+        aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#problema">O problema</a></li>
+          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#calculadora">Calculadora</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pet">PET → filamento</a></li>
+          <li class="nav-item"><a class="nav-link" href="#solicitar">Solicitar peça</a></li>
+          <li class="nav-item"><a class="nav-link" href="#como-usar">Como usar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="conteudo">
+
+    <!-- ================= INÍCIO ================= -->
+    <section id="inicio" class="hero" aria-labelledby="titulo-inicio">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7">
+            <h1 id="titulo-inicio">Impressão 3D para animais de Novo Hamburgo</h1>
+            <p class="hero-descricao">
+              O PatasPrint usa impressão 3D para levar dispositivos de baixo custo, como comedouros elevados,
+              a voluntários e ONGs da rede de proteção animal de Novo Hamburgo/RS. O site reúne um catálogo
+              de modelos, uma calculadora de material e custo, e um formulário para solicitar uma peça pronta.
+            </p>
+            <div class="hero-botoes">
+              <a href="#catalogo" class="btn btn-acento btn-lg">Ver catálogo</a>
+              <a href="#calculadora" class="btn btn-outline-light btn-contorno-claro btn-lg">Calcular uma peça</a>
+              <a href="#solicitar" class="btn btn-outline-light btn-contorno-claro btn-lg">Solicitar peça</a>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center">
+            <svg class="hero-icone" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <ellipse cx="100" cy="132" rx="56" ry="46" fill="currentColor" opacity="0.95"/>
+              <ellipse cx="44" cy="72" rx="22" ry="27" fill="currentColor"/>
+              <ellipse cx="90" cy="44" rx="22" ry="28" fill="currentColor"/>
+              <ellipse cx="141" cy="47" rx="22" ry="28" fill="currentColor"/>
+              <ellipse cx="176" cy="81" rx="20" ry="25" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= O PROBLEMA ================= -->
+    <section id="problema" class="secao secao-alt" aria-labelledby="titulo-problema">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2 id="titulo-problema">O problema em Novo Hamburgo</h2>
+          <p>Três números públicos, de fontes diferentes, sobre a proteção animal no município.</p>
+        </div>
+        <div class="row g-4" id="lista-problema">
+          <!-- preenchido por js/app.js a partir de js/dados.js -->
+        </div>
+        <p class="nota-regra">
+          Cada número acima mede uma coisa diferente — estimativa de animais de rua, atendimentos e capacidade
+          do abrigo. São dados independentes e não devem ser somados ou multiplicados entre si.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= CATÁLOGO ================= -->
+    <section id="catalogo" class="secao" aria-labelledby="titulo-catalogo">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2 id="titulo-catalogo">Catálogo de dispositivos</h2>
+          <p>
+            Um modelo autoral, criado para este projeto, e modelos de terceiros com licença Creative Commons,
+            sempre com crédito ao autor original.
+          </p>
+        </div>
+        <div class="row g-4" id="grade-catalogo">
+          <!-- preenchido por js/app.js a partir de js/dados.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CALCULADORA ================= -->
+    <section id="calculadora" class="secao secao-alt" aria-labelledby="titulo-calculadora">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2 id="titulo-calculadora">Calculadora de impacto</h2>
+          <p>Escolha o dispositivo, o porte do animal e a quantidade para estimar filamento, garrafas PET e custo.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <form id="form-calculadora" class="painel-calculadora" aria-label="Formulário da calculadora">
+              <div class="mb-3">
+                <label for="calc-modelo" class="form-label">Modelo</label>
+                <select id="calc-modelo" class="form-select" required></select>
+              </div>
+              <div class="mb-1">
+                <label for="calc-porte" class="form-label">Porte do animal</label>
+                <select id="calc-porte" class="form-select" required></select>
+              </div>
+              <small id="nota-definicao-porte" class="form-text"></small>
+              <div class="mb-3 mt-3">
+                <label for="calc-quantidade" class="form-label">Quantidade de peças</label>
+                <input type="number" id="calc-quantidade" class="form-control" min="1" value="1" required>
+              </div>
+              <button type="submit" class="btn btn-primario">Calcular</button>
+            </form>
+          </div>
+          <div class="col-lg-7">
+            <div id="calc-resultado" class="painel-calculadora" hidden aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DO PET AO FILAMENTO ================= -->
+    <section id="pet" class="secao" aria-labelledby="titulo-pet">
+      <div class="container">
+        <span class="selo-etapa-futura">Etapa futura do projeto</span>
+        <div class="secao-titulo">
+          <h2 id="titulo-pet">Do PET ao filamento</h2>
+          <p>
+            O processo de transformar garrafas PET em filamento foi pesquisado, mas ainda não foi montado
+            pelo projeto. Ele entra aqui como o próximo passo depois do site no ar.
+          </p>
+        </div>
+        <ol class="lista-etapas-pet" id="lista-etapas-pet">
+          <!-- preenchido por js/app.js a partir de js/dados.js -->
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= SOLICITAR PEÇA ================= -->
+    <section id="solicitar" class="secao secao-alt" aria-labelledby="titulo-solicitar">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2 id="titulo-solicitar">Solicitar peça</h2>
+          <p>Preencha os dados abaixo. O pedido é enviado por e-mail para quem cuida da produção.</p>
+        </div>
+
+        <div id="aviso-formulario" class="aviso-formulario" role="status" hidden>
+          O formulário ainda está em configuração — o envio será ativado assim que o Formspree estiver pronto
+          (veja <code>js/dados.js</code>).
+        </div>
+
+        <form id="form-solicitar" class="painel-formulario" method="POST">
+          <div class="mb-3">
+            <label for="form-ong">Nome da ONG ou grupo</label>
+            <input type="text" id="form-ong" name="ong" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="form-responsavel">Responsável</label>
+            <input type="text" id="form-responsavel" name="responsavel" class="form-control" required>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 mb-3">
+              <label for="form-contato">E-mail ou telefone</label>
+              <input type="text" id="form-contato" name="contato" class="form-control"
+                pattern="^([\w.+-]+@[\w-]+\.[a-zA-Z]{2,}|\(?\d{2}\)?\s?\d{4,5}-?\d{4})$"
+                title="Informe um e-mail válido ou um telefone com DDD" required>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <label for="form-cidade">Cidade</label>
+              <input type="text" id="form-cidade" name="cidade" class="form-control" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 mb-3">
+              <label for="form-peca">Peça</label>
+              <select id="form-peca" name="peça" class="form-select" required></select>
+            </div>
+            <div class="col-sm-3 mb-3">
+              <label for="form-porte">Porte</label>
+              <select id="form-porte" name="porte" class="form-select" required></select>
+            </div>
+            <div class="col-sm-3 mb-3">
+              <label for="form-quantidade">Quantidade</label>
+              <input type="number" id="form-quantidade" name="quantidade" class="form-control" min="1" value="1" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="form-observacoes">Observações</label>
+            <textarea id="form-observacoes" name="observacoes" class="form-control" rows="3"></textarea>
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" id="form-consentimento" name="consentimento" class="form-check-input" required>
+            <label class="form-check-label" for="form-consentimento">
+              Autorizo o uso destes dados só para o atendimento desta solicitação.
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primario">Enviar solicitação</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= COMO USAR ================= -->
+    <section id="como-usar" class="secao" aria-labelledby="titulo-como-usar">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2 id="titulo-como-usar">Como usar</h2>
+          <p>Um guia curto para quem nunca usou o site.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4">
+            <div class="passo-usar">
+              <p class="passo-numero">1</p>
+              <h3>Escolha o dispositivo</h3>
+              <p>Veja o Catálogo e encontre o modelo certo para o porte do animal.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="passo-usar">
+              <p class="passo-numero">2</p>
+              <h3>Calcule o custo</h3>
+              <p>Use a Calculadora para saber quanto filamento e quantas garrafas PET a peça equivale.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="passo-usar">
+              <p class="passo-numero">3</p>
+              <h3>Solicite a peça</h3>
+              <p>Preencha o formulário em Solicitar peça com os dados da ONG ou do grupo.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="passo-usar">
+              <p class="passo-numero">4</p>
+              <h3>Aguarde o contato</h3>
+              <p>Quem cuida da produção recebe o pedido por e-mail e entra em contato para combinar a entrega.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="passo-usar">
+              <p class="passo-numero">5</p>
+              <h3>Receba e monte</h3>
+              <p>Ao receber a peça, siga as instruções de montagem que acompanham o dispositivo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <p class="mb-1"><strong>PatasPrint</strong></p>
+          <p class="mb-0">Atividade Extensionista II — Uninter, CST em Análise e Desenvolvimento de Sistemas.</p>
+        </div>
+        <div class="col-md-6">
+          <!-- TODO_PEDRO: troque "#" pelo link do repositório no GitHub -->
+          <p class="mb-1"><a href="#" target="_blank" rel="noopener">Código no GitHub</a></p>
+          <p class="mb-0">Créditos dos modelos de terceiros no <a href="#catalogo">Catálogo</a>, junto de cada peça.</p>
+        </div>
+      </div>
+      <p class="aviso-simulacao">
+        Fotos de montagem no site são simulações: modelo 3D sobreposto a foto real, sempre identificadas como tal.
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

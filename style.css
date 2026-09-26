@@ -1,0 +1,551 @@
+/* =========================================================================
+   PatasPrint — estilos
+   Paleta ancorada em dois campos do projeto: reciclagem (verde-petróleo)
+   e cuidado animal (âmbar quente). Tipografia: Space Grotesk nos títulos,
+   fonte padrão do sistema no corpo do texto.
+   ========================================================================= */
+
+:root {
+  --cor-primaria: #1F4B43;
+  --cor-primaria-clara: #35695F;
+  --cor-primaria-escura: #143932;
+  --cor-acento: #E8963C;
+  --cor-acento-escuro: #96591A;
+  --cor-fundo: #F3F1E7;
+  --cor-fundo-alt: #E9E4D2;
+  --cor-texto: #23241F;
+  --cor-texto-suave: #55564C;
+  --cor-borda: #D9D4C2;
+  --raio: 10px;
+  --sombra: 0 2px 10px rgba(20, 25, 20, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4,
+.marca {
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--cor-primaria-escura);
+  font-weight: 600;
+}
+
+a {
+  color: var(--cor-primaria);
+}
+
+a:hover,
+a:focus {
+  color: var(--cor-primaria-clara);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cor-acento-escuro);
+  outline-offset: 2px;
+}
+
+/* Link "pular para o conteúdo" — só aparece com foco de teclado */
+.link-pular {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--cor-primaria-escura);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  z-index: 2000;
+  border-radius: 0 0 var(--raio) 0;
+}
+
+.link-pular:focus {
+  left: 0;
+  top: 0;
+}
+
+/* ---------------------------------------------------------------------
+   Navegação
+   --------------------------------------------------------------------- */
+.navbar-patasprint {
+  background-color: var(--cor-primaria-escura);
+}
+
+.navbar-patasprint .navbar-brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  color: #fff !important;
+  letter-spacing: 0.01em;
+}
+
+.navbar-patasprint .nav-link {
+  color: #E7E4D8 !important;
+}
+
+.navbar-patasprint .nav-link:hover,
+.navbar-patasprint .nav-link:focus,
+.navbar-patasprint .nav-link.active {
+  color: #fff !important;
+}
+
+.navbar-patasprint .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ---------------------------------------------------------------------
+   Seções
+   --------------------------------------------------------------------- */
+.secao {
+  padding: 4.5rem 0;
+  scroll-margin-top: 4.5rem;
+}
+
+.secao-alt {
+  background-color: var(--cor-fundo-alt);
+}
+
+.secao-titulo {
+  max-width: 46rem;
+  margin-bottom: 2.5rem;
+}
+
+.secao-titulo h2 {
+  font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.secao-titulo p {
+  color: var(--cor-texto-suave);
+  max-width: 60ch;
+}
+
+/* ---------------------------------------------------------------------
+   Início
+   --------------------------------------------------------------------- */
+.hero {
+  background: linear-gradient(160deg, var(--cor-primaria-escura) 0%, var(--cor-primaria) 65%);
+  color: #F5F3EA;
+  padding: 5.5rem 0 4.5rem;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2.1rem, 1.6rem + 2vw, 3.25rem);
+  max-width: 20ch;
+}
+
+.hero p.hero-descricao {
+  color: #E4E1D2;
+  max-width: 55ch;
+  font-size: 1.15rem;
+}
+
+.hero-icone {
+  width: 100%;
+  max-width: 260px;
+  color: var(--cor-acento);
+}
+
+.hero-botoes .btn {
+  margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.btn-acento {
+  background-color: var(--cor-acento);
+  border-color: var(--cor-acento);
+  color: #241704;
+  font-weight: 600;
+}
+
+.btn-acento:hover,
+.btn-acento:focus {
+  background-color: #d9852b;
+  border-color: #d9852b;
+  color: #241704;
+}
+
+.btn-contorno-claro {
+  border-color: #E4E1D2;
+  color: #F5F3EA;
+}
+
+.btn-contorno-claro:hover,
+.btn-contorno-claro:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: #fff;
+}
+
+/* ---------------------------------------------------------------------
+   Problema em Novo Hamburgo
+   --------------------------------------------------------------------- */
+.estatistica {
+  height: 100%;
+  padding: 1.75rem;
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.estatistica-numero {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  margin-bottom: 0.25rem;
+  line-height: 1;
+}
+
+.estatistica-texto {
+  color: var(--cor-texto);
+  margin-bottom: 0.9rem;
+}
+
+.estatistica-fonte {
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.nota-regra {
+  margin-top: 1.75rem;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  max-width: 60ch;
+}
+
+/* ---------------------------------------------------------------------
+   Catálogo
+   --------------------------------------------------------------------- */
+.card-modelo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+.imagem-render {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.imagem-pendente {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-fundo-alt);
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  border-bottom: 1px dashed var(--cor-borda);
+}
+
+.card-modelo-corpo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex-grow: 1;
+}
+
+.card-modelo-corpo h3 {
+  font-size: 1.15rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.badge-tipo {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-autoral {
+  background-color: #DCEAE6;
+  color: var(--cor-primaria-escura);
+}
+
+.badge-comunidade {
+  background-color: #F5E3C8;
+  color: var(--cor-acento-escuro);
+}
+
+.ficha-linha {
+  font-size: 0.92rem;
+  margin-bottom: 0.15rem;
+}
+
+.dado-pendente {
+  color: var(--cor-acento-escuro);
+  font-style: italic;
+}
+
+.figura-simulacao {
+  margin: 0.6rem 0 0;
+}
+
+.figura-simulacao .imagem-montagem,
+.figura-simulacao .imagem-pendente {
+  aspect-ratio: 16 / 10;
+  border-radius: 6px;
+}
+
+.figura-simulacao figcaption {
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+  font-style: italic;
+  margin-top: 0.35rem;
+}
+
+.btn-primario,
+.btn-solicitar-peca {
+  margin-top: auto;
+  align-self: flex-start;
+  background-color: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--raio);
+  font-weight: 600;
+}
+
+.btn-primario:hover,
+.btn-primario:focus,
+.btn-solicitar-peca:hover,
+.btn-solicitar-peca:focus {
+  background-color: var(--cor-primaria-clara);
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------------
+   Calculadora
+   --------------------------------------------------------------------- */
+.painel-calculadora {
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 2rem;
+}
+
+#nota-definicao-porte {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  margin-top: 0.35rem;
+}
+
+.resultado-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.25rem;
+  margin: 1.75rem 0 1.25rem;
+}
+
+.resultado-item {
+  text-align: left;
+  padding: 1.1rem;
+  background-color: var(--cor-fundo);
+  border-radius: var(--raio);
+}
+
+.resultado-valor {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cor-primaria-escura);
+  margin-bottom: 0.15rem;
+}
+
+.resultado-rotulo {
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0;
+}
+
+.resultado-comparacao {
+  font-size: 0.98rem;
+}
+
+.fonte-inline {
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+}
+
+.resultado-premissas {
+  font-size: 0.82rem;
+  color: var(--cor-texto-suave);
+  border-top: 1px solid var(--cor-borda);
+  padding-top: 0.9rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------------------
+   PET → filamento
+   --------------------------------------------------------------------- */
+.selo-etapa-futura {
+  display: inline-block;
+  background-color: #F5E3C8;
+  color: var(--cor-acento-escuro);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.lista-etapas-pet {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.etapa-pet {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.etapa-numero {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: var(--cor-primaria);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.etapa-pet h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.etapa-pet p {
+  margin-bottom: 0;
+  color: var(--cor-texto-suave);
+}
+
+/* ---------------------------------------------------------------------
+   Formulário — Solicitar peça
+   --------------------------------------------------------------------- */
+.painel-formulario {
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 2rem;
+  max-width: 42rem;
+}
+
+.painel-formulario label {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.aviso-formulario {
+  background-color: #FBE7D3;
+  border: 1px solid var(--cor-acento);
+  color: var(--cor-acento-escuro);
+  border-radius: var(--raio);
+  padding: 0.9rem 1.1rem;
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------------------------------------------------------------------
+   Como usar
+   --------------------------------------------------------------------- */
+.passo-usar {
+  height: 100%;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.passo-numero {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cor-acento-escuro);
+  margin-bottom: 0.4rem;
+}
+
+.passo-usar h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.passo-usar p {
+  color: var(--cor-texto-suave);
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------------------
+   Rodapé
+   --------------------------------------------------------------------- */
+.rodape {
+  background-color: var(--cor-primaria-escura);
+  color: #E4E1D2;
+  padding: 2.5rem 0;
+  font-size: 0.9rem;
+}
+
+.rodape a {
+  color: #F5D9AF;
+}
+
+.rodape a:hover,
+.rodape a:focus {
+  color: #fff;
+}
+
+.rodape .aviso-simulacao {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  font-size: 0.82rem;
+  color: #C9C6B6;
+}
+
+@media (max-width: 767px) {
+  .secao {
+    padding: 3rem 0;
+  }
+
+  .hero {
+    padding: 3.5rem 0 3rem;
+    text-align: left;
+  }
+}

@@ -1,0 +1,20 @@
+Esta pasta está vazia de propósito. O Git não versiona pastas vazias, então
+este arquivo existe só para a pasta "img/" ir junto no repositório.
+
+Imagens esperadas (nomes usados em js/dados.js):
+
+- comedouro-render.jpg
+    Render 3D do comedouro elevado (qualquer porte).
+
+- comedouro-montagem.jpg
+    Foto do comedouro impresso, em uso ou simulado sobre uma foto real.
+    O site já adiciona sozinho a legenda "Simulação: modelo 3D sobreposto
+    a foto real" — não precisa incluir isso na imagem.
+
+- comunidade-1-render.jpg
+    Imagem do primeiro modelo de terceiro escolhido no Printables
+    (respeitando a licença do modelo).
+
+Ao adicionar um novo modelo de terceiro em js/dados.js, inclua a imagem
+correspondente aqui e aponte o caminho no campo "imagens" daquele modelo.
+Depois de colocar as imagens de verdade, pode apagar este arquivo.
