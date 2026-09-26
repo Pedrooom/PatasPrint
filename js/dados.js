@@ -151,7 +151,8 @@ const DADOS = {
           massaG: 74,
           tempoMin: 162,
           arquivo: null, // download pela página do modelo (campo "link")
-          precoMercado: null
+          // média de preço de talas prontas para cães, pesquisa de 26 set. 2026
+          precoMercado: 180.00
         }
       }
     },
@@ -178,7 +179,8 @@ const DADOS = {
           massaG: 104,
           tempoMin: 270,
           arquivo: null, // download pela página do modelo (campo "link")
-          precoMercado: null
+          // média de preço de talas prontas para cães, pesquisa de 26 set. 2026
+          precoMercado: 180.00
         }
       }
     }
