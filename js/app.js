@@ -1,8 +1,7 @@
 /**
  * js/app.js
  * ---------
- * Renderiza o catálogo, roda a calculadora e prepara o formulário de
- * solicitação. Não depende de build nem de backend — só lê js/dados.js.
+ * Renderiza o catálogo e roda a calculadora. Não depende de build nem de backend — só lê js/dados.js.
  */
 
 (function () {
@@ -136,21 +135,12 @@
                 '<p class="ficha-linha"><strong>Portes disponíveis:</strong> ' + portesTexto + "</p>" +
                 linhaOrigem +
                 montagemHtml +
-                '<button type="button" class="btn btn-solicitar-peca" data-modelo="' + modelo.id + '">' +
-                  "Solicitar esta peça" +
-                "</button>" +
               "</div>" +
             "</article>" +
           "</div>"
         );
       })
       .join("");
-
-    container.querySelectorAll(".btn-solicitar-peca").forEach(function (botao) {
-      botao.addEventListener("click", function () {
-        prepararSolicitacao(botao.getAttribute("data-modelo"));
-      });
-    });
   }
 
   // -----------------------------------------------------------------
@@ -251,76 +241,6 @@
   }
 
   // -----------------------------------------------------------------
-  // Solicitar peça
-  // -----------------------------------------------------------------
-  function prepararSolicitacao(modeloId) {
-    const modelo = DADOS.modelos.find(function (m) { return m.id === modeloId; });
-    const selectPeca = document.getElementById("form-peca");
-    if (modelo && selectPeca) {
-      selectPeca.value = modelo.id;
-    }
-    const secao = document.getElementById("solicitar");
-    if (secao && typeof secao.scrollIntoView === "function") {
-      secao.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    const primeiroCampo = document.getElementById("form-ong");
-    if (primeiroCampo) {
-      window.setTimeout(function () { primeiroCampo.focus(); }, 400);
-    }
-  }
-
-  function popularSelectPecaFormulario() {
-    const select = document.getElementById("form-peca");
-    if (!select) return;
-    select.innerHTML = DADOS.modelos
-      .map(function (modelo) {
-        return '<option value="' + modelo.id + '">' + modelo.nome + "</option>";
-      })
-      .join("");
-  }
-
-  function popularSelectPorteFormulario() {
-    const select = document.getElementById("form-porte");
-    if (!select) return;
-    const portes = new Map();
-    DADOS.modelos.forEach(function (modelo) {
-      Object.keys(modelo.portes).forEach(function (sigla) {
-        if (!portes.has(sigla)) portes.set(sigla, nomePorte(sigla, modelo.portes[sigla]));
-      });
-    });
-    select.innerHTML = Array.from(portes)
-      .map(function (par) {
-        return '<option value="' + par[0] + '">' + par[1] + "</option>";
-      })
-      .join("");
-  }
-
-  function configurarFormulario() {
-    const form = document.getElementById("form-solicitar");
-    const aviso = document.getElementById("aviso-formulario");
-    if (!form) return;
-
-    const idPronto = DADOS.formspreeId && !DADOS.formspreeId.startsWith("TODO_PEDRO");
-
-    if (idPronto) {
-      form.action = "https://formspree.io/f/" + DADOS.formspreeId;
-      if (aviso) aviso.hidden = true;
-    } else {
-      form.action = "#";
-      if (aviso) aviso.hidden = false;
-      form.addEventListener("submit", function (evento) {
-        evento.preventDefault();
-        aviso.scrollIntoView({ behavior: "smooth", block: "center" });
-      });
-    }
-
-    form.addEventListener("submit", function () {
-      // Validação nativa do HTML5 (required, type="email", pattern) já roda
-      // antes deste ponto; o Formspree cuida do envio quando o ID existir.
-    });
-  }
-
-  // -----------------------------------------------------------------
   // Etapas PET → filamento
   // -----------------------------------------------------------------
   function montarEtapasPet() {
@@ -363,9 +283,6 @@
 
     popularSelectModelos();
     popularSelectPortes();
-    popularSelectPecaFormulario();
-    popularSelectPorteFormulario();
-    configurarFormulario();
 
     const selectModelo = document.getElementById("calc-modelo");
     if (selectModelo) {

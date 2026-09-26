@@ -14,7 +14,8 @@ O site reúne:
   de cada peça;
 - um resumo do processo de transformar garrafas PET em filamento
   (etapa futura do projeto);
-- um formulário para solicitar uma peça.
+- um contato por WhatsApp para quem precisa de ajuda para imprimir ou
+  montar uma peça.
 
 ## Site publicado
 
@@ -59,12 +60,7 @@ Todos os dados que faltam estão marcados com `TODO_PEDRO` dentro de
 - preço do filamento PETG por kg, com fonte;
 - massa média de uma garrafa PET de 2L vazia, com fonte;
 - links, imagens, autor, licença e número de downloads de cada modelo de
-  terceiro escolhido nos repositórios abertos (MakerWorld e Printables);
-- ID do formulário no Formspree.
-
-Enquanto o ID do Formspree não for preenchido, o site avisa na seção
-"Solicitar peça" que o envio ainda não está ativo, em vez de deixar o
-formulário falhar sem explicação.
+  terceiro escolhido nos repositórios abertos (MakerWorld e Printables).
 
 Depois de preencher `js/dados.js`, também troque o link "Código no GitHub"
 no rodapé de `index.html` pelo endereço real do repositório.
@@ -89,8 +85,6 @@ no rodapé de `index.html` pelo endereço real do repositório.
   Correio Braziliense (set. 2025).
 - **Bootstrap 5**: licença MIT — <https://getbootstrap.com>.
 - **Fonte Space Grotesk**: licença SIL Open Font License, via Google Fonts.
-- **Formspree**: usado só para receber o formulário de solicitação por
-  e-mail; nenhum dado é armazenado pelo site.
 
 ## Autor
 

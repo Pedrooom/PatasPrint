@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PatasPrint — impressão 3D para animais de Novo Hamburgo/RS</title>
-  <meta name="description" content="Catálogo de dispositivos 3D, calculadora de custo e formulário de solicitação de peças para a rede de proteção animal de Novo Hamburgo/RS.">
+  <meta name="description" content="Catálogo de dispositivos 3D, calculadora de custo e contato de ajuda para a rede de proteção animal de Novo Hamburgo/RS.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,7 @@
           <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
           <li class="nav-item"><a class="nav-link" href="#calculadora">Calculadora</a></li>
           <li class="nav-item"><a class="nav-link" href="#pet">PET → filamento</a></li>
-          <li class="nav-item"><a class="nav-link" href="#solicitar">Solicitar peça</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ajuda">Ajuda</a></li>
           <li class="nav-item"><a class="nav-link" href="#como-usar">Como usar</a></li>
         </ul>
       </div>
@@ -49,12 +49,12 @@
             <p class="hero-descricao">
               O PatasPrint usa impressão 3D para levar dispositivos de baixo custo, como comedouros elevados,
               a voluntários e ONGs da rede de proteção animal de Novo Hamburgo/RS. O site reúne um catálogo
-              de modelos, uma calculadora de material e custo, e um formulário para solicitar uma peça pronta.
+              de modelos, uma calculadora de material e custo, e um contato para quem precisa de ajuda para imprimir ou montar uma peça.
             </p>
             <div class="hero-botoes">
               <a href="#catalogo" class="btn btn-acento btn-lg">Ver catálogo</a>
               <a href="#calculadora" class="btn btn-outline-light btn-contorno-claro btn-lg">Calcular uma peça</a>
-              <a href="#solicitar" class="btn btn-outline-light btn-contorno-claro btn-lg">Solicitar peça</a>
+              <a href="#ajuda" class="btn btn-outline-light btn-contorno-claro btn-lg">Pedir ajuda</a>
             </div>
           </div>
           <div class="col-lg-5 text-center">
@@ -153,66 +153,21 @@
       </div>
     </section>
 
-    <!-- ================= SOLICITAR PEÇA ================= -->
-    <section id="solicitar" class="secao secao-alt" aria-labelledby="titulo-solicitar">
+    <!-- ================= AJUDA ================= -->
+    <section id="ajuda" class="secao secao-alt" aria-labelledby="titulo-ajuda">
       <div class="container">
         <div class="secao-titulo">
-          <h2 id="titulo-solicitar">Solicitar peça</h2>
-          <p>Preencha os dados abaixo. O pedido é enviado por e-mail para quem cuida da produção.</p>
+          <h2 id="titulo-ajuda">Precisa de ajuda para montar?</h2>
         </div>
-
-        <div id="aviso-formulario" class="aviso-formulario" role="status" hidden>
-          O formulário ainda está em configuração — o envio será ativado assim que o Formspree estiver pronto
-          (veja <code>js/dados.js</code>).
+        <div class="painel-contato">
+          <p>
+            Se você é protetor, voluntário ou faz parte de uma ONG e quer ajuda para imprimir ou montar
+            alguma peça, fale comigo.
+          </p>
+          <a href="https://wa.me/5551999722107" class="btn btn-primario" target="_blank" rel="noopener">
+            WhatsApp: (51) 99972-2107
+          </a>
         </div>
-
-        <form id="form-solicitar" class="painel-formulario" method="POST">
-          <div class="mb-3">
-            <label for="form-ong">Nome da ONG ou grupo</label>
-            <input type="text" id="form-ong" name="ong" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label for="form-responsavel">Responsável</label>
-            <input type="text" id="form-responsavel" name="responsavel" class="form-control" required>
-          </div>
-          <div class="row">
-            <div class="col-sm-6 mb-3">
-              <label for="form-contato">E-mail ou telefone</label>
-              <input type="text" id="form-contato" name="contato" class="form-control"
-                pattern="^([\w.+-]+@[\w-]+\.[a-zA-Z]{2,}|\(?\d{2}\)?\s?\d{4,5}-?\d{4})$"
-                title="Informe um e-mail válido ou um telefone com DDD" required>
-            </div>
-            <div class="col-sm-6 mb-3">
-              <label for="form-cidade">Cidade</label>
-              <input type="text" id="form-cidade" name="cidade" class="form-control" required>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6 mb-3">
-              <label for="form-peca">Peça</label>
-              <select id="form-peca" name="peça" class="form-select" required></select>
-            </div>
-            <div class="col-sm-3 mb-3">
-              <label for="form-porte">Porte</label>
-              <select id="form-porte" name="porte" class="form-select" required></select>
-            </div>
-            <div class="col-sm-3 mb-3">
-              <label for="form-quantidade">Quantidade</label>
-              <input type="number" id="form-quantidade" name="quantidade" class="form-control" min="1" value="1" required>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="form-observacoes">Observações</label>
-            <textarea id="form-observacoes" name="observacoes" class="form-control" rows="3"></textarea>
-          </div>
-          <div class="form-check mb-3">
-            <input type="checkbox" id="form-consentimento" name="consentimento" class="form-check-input" required>
-            <label class="form-check-label" for="form-consentimento">
-              Autorizo o uso destes dados só para o atendimento desta solicitação.
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primario">Enviar solicitação</button>
-        </form>
       </div>
     </section>
 
@@ -241,22 +196,15 @@
           <div class="col-sm-6 col-lg-4">
             <div class="passo-usar">
               <p class="passo-numero">3</p>
-              <h3>Solicite a peça</h3>
-              <p>Preencha o formulário em Solicitar peça com os dados da ONG ou do grupo.</p>
+              <h3>Peça ajuda, se precisar</h3>
+              <p>Se quiser ajuda para imprimir ou montar a peça, fale pelo WhatsApp indicado na seção Ajuda.</p>
             </div>
           </div>
           <div class="col-sm-6 col-lg-4">
             <div class="passo-usar">
               <p class="passo-numero">4</p>
-              <h3>Aguarde o contato</h3>
-              <p>Quem cuida da produção recebe o pedido por e-mail e entra em contato para combinar a entrega.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="passo-usar">
-              <p class="passo-numero">5</p>
-              <h3>Receba e monte</h3>
-              <p>Ao receber a peça, siga as instruções de montagem que acompanham o dispositivo.</p>
+              <h3>Monte e use</h3>
+              <p>Siga as instruções de montagem e os avisos de cada peça, que aparecem junto dela no Catálogo.</p>
             </div>
           </div>
         </div>

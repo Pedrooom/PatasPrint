@@ -339,8 +339,7 @@ a:focus {
   margin-top: 0.35rem;
 }
 
-.btn-primario,
-.btn-solicitar-peca {
+.btn-primario {
   margin-top: auto;
   align-self: flex-start;
   background-color: var(--cor-primaria);
@@ -352,9 +351,7 @@ a:focus {
 }
 
 .btn-primario:hover,
-.btn-primario:focus,
-.btn-solicitar-peca:hover,
-.btn-solicitar-peca:focus {
+.btn-primario:focus {
   background-color: var(--cor-primaria-clara);
   color: #fff;
 }
@@ -475,29 +472,14 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
-   Formulário — Solicitar peça
+   Ajuda
    --------------------------------------------------------------------- */
-.painel-formulario {
+.painel-contato {
   background-color: #fff;
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
   padding: 2rem;
   max-width: 42rem;
-}
-
-.painel-formulario label {
-  font-weight: 600;
-  font-size: 0.92rem;
-}
-
-.aviso-formulario {
-  background-color: #FBE7D3;
-  border: 1px solid var(--cor-acento);
-  color: var(--cor-acento-escuro);
-  border-radius: var(--raio);
-  padding: 0.9rem 1.1rem;
-  font-size: 0.92rem;
-  margin-bottom: 1.25rem;
 }
 
 /* ---------------------------------------------------------------------

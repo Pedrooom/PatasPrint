@@ -22,14 +22,6 @@ const DADOS = {
   },
 
   // ---------------------------------------------------------------------
-  // Formspree — formulário de solicitação de peça
-  // ---------------------------------------------------------------------
-  // TODO_PEDRO: ID do formulário no Formspree (ex.: "mzzenopq").
-  // Enquanto estiver como "TODO_PEDRO", o site avisa que o envio está
-  // desativado em vez de deixar o formulário falhar sem explicação.
-  formspreeId: "TODO_PEDRO",
-
-  // ---------------------------------------------------------------------
   // Referência de mercado citada na seção da Calculadora (dado já apurado,
   // não depende do Pedro)
   // ---------------------------------------------------------------------
