@@ -86,11 +86,10 @@ const DADOS = {
       licenca: "Autoral — uso livre para ONGs de proteção animal, com crédito ao projeto",
       downloads: null,
       imagens: {
-        // TODO_PEDRO: render 3D do comedouro (qualquer porte, é a mesma peça em escalas diferentes)
         render: "img/comedouro-render.jpg",
-        // TODO_PEDRO: foto do comedouro impresso sobreposta a uma foto real (a legenda de simulação
-        // é adicionada automaticamente pelo site, não precisa incluir no nome do arquivo)
-        montagem: "img/comedouro-montagem.jpg"
+        // TODO_PEDRO: foto do comedouro impresso sobreposta a uma foto real, salva como
+        // "img/comedouro-montagem.jpg" (a legenda de simulação é adicionada automaticamente)
+        montagem: null
       },
       // massaG e tempoMin: fatiamento no Bambu Studio, perfil A1 / PETG
       // precoMercado: menor preço encontrado por porte (Mádela Pet e Mercado Livre, 26 set. 2026)

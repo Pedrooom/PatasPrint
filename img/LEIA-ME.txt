@@ -1,5 +1,5 @@
-Esta pasta está vazia de propósito. O Git não versiona pastas vazias, então
-este arquivo existe só para a pasta "img/" ir junto no repositório.
+Imagens do catálogo. Os nomes abaixo são os usados em js/dados.js.
+Ainda falta a foto de montagem do comedouro (comedouro-montagem.jpg).
 
 Imagens esperadas (nomes usados em js/dados.js):
 
