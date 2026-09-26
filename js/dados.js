@@ -20,7 +20,7 @@ const DADOS = {
 
   garrafaPet: {
     // TODO_PEDRO: massa média de uma garrafa PET de 2L vazia, em gramas
-    massaGramas: null,
+    massaGramas: 20,
     // TODO_PEDRO: fonte dessa massa (embalagem, artigo, pesagem própria)
     fonte: "TODO_PEDRO: fonte da massa da garrafa PET"
   },
@@ -54,11 +54,11 @@ const DADOS = {
     {
       numero: "1.675",
       texto: "protocolos de atendimento recebidos pela Diretoria de Bem-Estar Animal (DBEA) no 1º semestre de 2026.",
-      fonte: "DBEA, 1º semestre de 2026"
+      fonte: "Câmara Municipal de Novo Hamburgo, 12 ago. 2026"
     },
     {
       numero: "130",
-      texto: "animais acima da capacidade no abrigo municipal.",
+      texto: "animais no abrigo municipal, número acima da capacidade do local.",
       fonte: "Jornal do Comércio, 2 jan. 2026"
     }
   ],

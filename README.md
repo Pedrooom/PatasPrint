@@ -18,8 +18,7 @@ O site reúne:
 
 ## Site publicado
 
-TODO_PEDRO: link do GitHub Pages depois de publicado, por exemplo:
-`https://SEU-USUARIO.github.io/patasprint/`
+https://pedrooom.github.io/PatasPrint/
 
 ## Estrutura do repositório
 
