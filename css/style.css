@@ -305,6 +305,30 @@ a:focus {
   font-style: italic;
 }
 
+.downloads-modelo {
+  margin-top: auto;
+  padding-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn-download {
+  background-color: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--raio);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-download:hover,
+.btn-download:focus {
+  background-color: var(--cor-primaria-clara);
+  color: #fff;
+}
+
 .aviso-modelo {
   background-color: #FBE7D3;
   border-left: 3px solid var(--cor-acento);

@@ -102,6 +102,30 @@
           linhaOrigem = '<p class="ficha-linha"><strong>Autor:</strong> ' + modelo.autor + "</p>";
         }
 
+        let downloadHtml = "";
+        if (modelo.tipo === "comunidade") {
+          if (modelo.link && !modelo.link.startsWith("TODO_PEDRO")) {
+            downloadHtml =
+              '<a class="btn btn-download" href="' + modelo.link + '" target="_blank" rel="noopener">' +
+                "Baixar no " + modelo.plataforma +
+              "</a>";
+          }
+        } else {
+          downloadHtml = Object.keys(modelo.portes)
+            .filter(function (sigla) { return modelo.portes[sigla].arquivo; })
+            .map(function (sigla) {
+              return (
+                '<a class="btn btn-download" href="' + modelo.portes[sigla].arquivo + '" rel="noopener">' +
+                  "Baixar " + nomePorte(sigla, modelo.portes[sigla]) + " (" + modelo.formatoArquivo + ")" +
+                "</a>"
+              );
+            })
+            .join("");
+        }
+        if (downloadHtml) {
+          downloadHtml = '<div class="downloads-modelo">' + downloadHtml + "</div>";
+        }
+
         const montagemHtml = modelo.imagens.montagem
           ? '<figure class="figura-simulacao">' +
               imagemComFallback(modelo.imagens.montagem, "Simulação de " + modelo.nome + " em uso", "imagem-montagem") +
@@ -124,7 +148,7 @@
         return (
           '<div class="col-md-6 col-lg-4">' +
             '<article class="card-modelo">' +
-              imagemComFallback(modelo.imagens.render, "Render 3D de " + modelo.nome, "imagem-render") +
+              imagemComFallback(modelo.imagens.render, "Imagem de " + modelo.nome, "imagem-render") +
               creditoHtml +
               '<div class="card-modelo-corpo">' +
                 badgeTipo(modelo) +
@@ -132,9 +156,10 @@
                 "<p>" + modelo.descricao + "</p>" +
                 avisoHtml +
                 indicadoHtml +
-                '<p class="ficha-linha"><strong>Portes disponíveis:</strong> ' + portesTexto + "</p>" +
+                '<p class="ficha-linha"><strong>Tamanhos disponíveis:</strong> ' + portesTexto + "</p>" +
                 linhaOrigem +
                 montagemHtml +
+                downloadHtml +
               "</div>" +
             "</article>" +
           "</div>"
@@ -202,16 +227,22 @@
 
     let comparacaoHtml;
     if (porte.precoMercado !== null && porte.precoMercado !== undefined && custo !== null) {
-      const economia = porte.precoMercado * quantidade - custo;
+      const diferenca = porte.precoMercado * quantidade - custo;
       comparacaoHtml =
         "Um equivalente pronto no mercado custaria aproximadamente " +
         "<strong>" + moeda.format(porte.precoMercado * quantidade) + "</strong>. " +
-        "Economia estimada: <strong>" + moeda.format(economia) + "</strong>.";
+        "Diferença em relação ao custo do material: <strong>" + moeda.format(diferenca) + "</strong>. " +
+        "A conta considera só o filamento — não inclui energia, tempo de máquina nem peças perdidas.";
     } else {
-      comparacaoHtml =
-        "Ainda não há um preço de mercado cadastrado para este item. " +
-        "Como referência: " + DADOS.referenciaMercado.texto +
-        ' <span class="fonte-inline">(' + DADOS.referenciaMercado.fonte + ")</span>";
+      comparacaoHtml = "Ainda não há um preço de mercado cadastrado para este item.";
+      if (massaTotal === null) {
+        comparacaoHtml += " A massa de filamento será informada depois do fatiamento da peça em PETG.";
+      }
+      if (modelo.referenciaMercado) {
+        comparacaoHtml +=
+          " Como referência: " + modelo.referenciaMercado.texto +
+          ' <span class="fonte-inline">(' + modelo.referenciaMercado.fonte + ")</span>";
+      }
     }
 
     resultado.innerHTML =
@@ -262,14 +293,38 @@
   }
 
   // -----------------------------------------------------------------
-  // Definição de porte (nota usada perto da calculadora)
+  // Nota abaixo do tamanho, na calculadora: para quem o modelo é indicado
   // -----------------------------------------------------------------
-  function montarDefinicaoPorte() {
-    const container = document.getElementById("nota-definicao-porte");
-    if (!container) return;
-    container.textContent = DADOS.definicaoPorte
-      .map(function (item) { return item.porte + ": " + item.faixa; })
-      .join(" · ");
+  function atualizarNotaTamanho() {
+    const container = document.getElementById("nota-tamanho");
+    const selectModelo = document.getElementById("calc-modelo");
+    if (!container || !selectModelo) return;
+    const modelo = DADOS.modelos.find(function (m) { return m.id === selectModelo.value; });
+    container.textContent = modelo && modelo.indicadoPara ? "Indicado para: " + modelo.indicadoPara : "";
+  }
+
+  // -----------------------------------------------------------------
+  // Aviso de simulação no rodapé: só aparece se houver foto de montagem
+  // -----------------------------------------------------------------
+  function ajustarAvisoSimulacao() {
+    const aviso = document.getElementById("aviso-simulacao");
+    if (!aviso) return;
+    aviso.hidden = !DADOS.modelos.some(function (m) { return m.imagens.montagem; });
+  }
+
+  // -----------------------------------------------------------------
+  // Menu no celular: fecha ao tocar em um item
+  // -----------------------------------------------------------------
+  function configurarMenu() {
+    const menu = document.getElementById("menuPrincipal");
+    if (!menu || typeof bootstrap === "undefined") return;
+    menu.querySelectorAll(".nav-link").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (menu.classList.contains("show")) {
+          bootstrap.Collapse.getOrCreateInstance(menu).hide();
+        }
+      });
+    });
   }
 
   // -----------------------------------------------------------------
@@ -279,14 +334,19 @@
     montarProblema();
     montarCatalogo();
     montarEtapasPet();
-    montarDefinicaoPorte();
+    ajustarAvisoSimulacao();
+    configurarMenu();
 
     popularSelectModelos();
     popularSelectPortes();
+    atualizarNotaTamanho();
 
     const selectModelo = document.getElementById("calc-modelo");
     if (selectModelo) {
-      selectModelo.addEventListener("change", popularSelectPortes);
+      selectModelo.addEventListener("change", function () {
+        popularSelectPortes();
+        atualizarNotaTamanho();
+      });
     }
 
     const formCalculadora = document.getElementById("form-calculadora");

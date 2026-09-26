@@ -22,15 +22,6 @@ const DADOS = {
   },
 
   // ---------------------------------------------------------------------
-  // Referência de mercado citada na seção da Calculadora (dado já apurado,
-  // não depende do Pedro)
-  // ---------------------------------------------------------------------
-  referenciaMercado: {
-    texto: "Uma cadeira de rodas comercial para cães custa a partir de R$ 1.200. Uma versão equivalente impressa em 3D sai por cerca de R$ 448,81.",
-    fonte: "Correio Braziliense, set. 2025"
-  },
-
-  // ---------------------------------------------------------------------
   // O problema em Novo Hamburgo (dados já apurados, com fonte)
   // ---------------------------------------------------------------------
   problemaNovoHamburgo: [
@@ -52,15 +43,6 @@ const DADOS = {
   ],
 
   // ---------------------------------------------------------------------
-  // Definição de porte, usada na calculadora e no catálogo
-  // ---------------------------------------------------------------------
-  definicaoPorte: [
-    { porte: "P", faixa: "até 10 kg" },
-    { porte: "M", faixa: "10 a 25 kg" },
-    { porte: "G", faixa: "acima de 25 kg" }
-  ],
-
-  // ---------------------------------------------------------------------
   // Etapas do processo PET → filamento (etapa futura do projeto, RF19/RF20)
   // ---------------------------------------------------------------------
   etapasPet: [
@@ -79,11 +61,12 @@ const DADOS = {
       id: "comedouro-elevado",
       nome: "Comedouro elevado PatasPrint",
       tipo: "autoral", // "autoral" ou "comunidade"
-      autor: "Pedro Ries — PatasPrint",
+      autor: "Pedro Martinez Ries — PatasPrint",
       descricao: "Suporte elevado para tigela, modelado por Pedro Martinez Ries no Bambu Studio e impresso em PETG.",
       aviso: "Use com tigela removível de inox ou cerâmica. Não coloque ração direto na peça.",
       link: null,
       licenca: "Autoral — uso livre para ONGs de proteção animal, com crédito ao projeto",
+      formatoArquivo: ".3mf", // projeto do Bambu Studio, já com o perfil de impressão
       downloads: null,
       imagens: {
         render: "img/comedouro-render.jpg",
@@ -91,6 +74,7 @@ const DADOS = {
         // "img/comedouro-montagem.jpg" (a legenda de simulação é adicionada automaticamente)
         montagem: null
       },
+      // arquivo: link de download direto do Google Drive
       // massaG e tempoMin: fatiamento no Bambu Studio, perfil A1 / PETG
       // precoMercado: menor preço encontrado por porte (Mádela Pet e Mercado Livre, 26 set. 2026)
       portes: {
@@ -98,21 +82,22 @@ const DADOS = {
           nome: "Tamanho 1 (pequeno)",
           massaG: 200.38,
           tempoMin: 173,
-          stl: "https://drive.google.com/uc?export=download&id=1A7p4sZHBH5bUfA9nl6HrKFzDtKRblU-t",
+          arquivo: "https://drive.google.com/uc?export=download&id=1A7p4sZHBH5bUfA9nl6HrKFzDtKRblU-t",
           precoMercado: 64.00
         },
         M: {
           nome: "Tamanho 2 (médio)",
           massaG: 376.21,
           tempoMin: 290,
-          stl: "https://drive.google.com/uc?export=download&id=1pbjEW_Nb5tfgvGTU3PVaYGw2oUsNlTnG",
+          arquivo: "https://drive.google.com/uc?export=download&id=1pbjEW_Nb5tfgvGTU3PVaYGw2oUsNlTnG",
           precoMercado: 104.90
         }
       }
     },
 
     // Modelos de terceiros: para adicionar outro, duplique um dos blocos abaixo.
-    // Regra do projeto: só entra no catálogo se a licença for CC BY ou CC BY-NC.
+    // Regra do projeto: só entra no catálogo modelo com licença Creative Commons que
+    // permita adaptação (CC BY, CC BY-SA, CC BY-NC ou CC BY-NC-SA). Licenças ND ficam de fora.
     // massaG e tempoMin ficam null porque o perfil original é PLA.
     // TODO_PEDRO: refatiar os três em PETG no Bambu Studio e preencher massaG e tempoMin.
     {
@@ -125,6 +110,11 @@ const DADOS = {
       plataforma: "MakerWorld",
       link: "https://makerworld.com/en/models/3111262-parametric-cat-wheelchair-generator",
       licenca: "CC BY-NC-SA 4.0",
+      // Referência de preço de mercado para cadeiras de rodas, mostrada na calculadora
+      referenciaMercado: {
+        texto: "Uma cadeira de rodas comercial para cães custa a partir de R$ 1.200. Uma versão equivalente impressa em 3D sai por cerca de R$ 448,81.",
+        fonte: "Correio Braziliense, set. 2025"
+      },
       downloads: 90,
       impressoes: 20,
       imagens: {
@@ -136,7 +126,7 @@ const DADOS = {
         Unico: {
           massaG: null,
           tempoMin: null,
-          stl: "https://makerworld.com/en/models/3111262-parametric-cat-wheelchair-generator",
+          arquivo: null, // download pela página do modelo (campo "link")
           precoMercado: null
         }
       }
@@ -163,7 +153,7 @@ const DADOS = {
         Unico: {
           massaG: null,
           tempoMin: null,
-          stl: "https://makerworld.com/en/models/2835397-dog-splint-front-v1",
+          arquivo: null, // download pela página do modelo (campo "link")
           precoMercado: null
         }
       }
@@ -190,7 +180,7 @@ const DADOS = {
         Unico: {
           massaG: null,
           tempoMin: null,
-          stl: "https://makerworld.com/en/models/2843857-dog-splint-rear-leg",
+          arquivo: null, // download pela página do modelo (campo "link")
           precoMercado: null
         }
       }

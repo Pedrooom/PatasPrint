@@ -29,9 +29,9 @@ patasprint/
 ├── css/
 │   └── style.css       → estilos do site
 ├── js/
-│   ├── dados.js         → todos os dados pendentes (procure por TODO_PEDRO)
-│   └── app.js           → catálogo, calculadora e formulário
-├── img/                 → imagens do catálogo (entregue vazia — veja img/LEIA-ME.txt)
+│   ├── dados.js         → todos os dados do site (modelos, preços, fontes)
+│   └── app.js           → catálogo, calculadora e menu
+├── img/                 → imagens do catálogo (veja img/LEIA-ME.txt)
 └── README.md
 ```
 
@@ -50,20 +50,13 @@ Não precisa de servidor nem de instalação. Duas opções:
    python3 -m http.server 8000
    ```
 
-## Antes de publicar
+## O que ainda falta
 
-Todos os dados que faltam estão marcados com `TODO_PEDRO` dentro de
-`js/dados.js`:
+Os itens pendentes estão marcados com `TODO_PEDRO` dentro de `js/dados.js`:
 
-- massa (g) e tempo (min) de impressão de cada peça, por porte, tirados do
-  fatiamento no Bambu Studio;
-- preço do filamento PETG por kg, com fonte;
-- massa média de uma garrafa PET de 2L vazia, com fonte;
-- links, imagens, autor, licença e número de downloads de cada modelo de
-  terceiro escolhido nos repositórios abertos (MakerWorld e Printables).
-
-Depois de preencher `js/dados.js`, também troque o link "Código no GitHub"
-no rodapé de `index.html` pelo endereço real do repositório.
+- massa (g) e tempo (min) de impressão dos três modelos de terceiros,
+  refatiados em PETG no Bambu Studio;
+- foto de montagem do comedouro (`img/comedouro-montagem.jpg`).
 
 ## Publicar no GitHub Pages
 
@@ -73,14 +66,16 @@ no rodapé de `index.html` pelo endereço real do repositório.
 
 ## Créditos e licenças
 
-- **Comedouro elevado**: modelo autoral do projeto PatasPrint, modelado em
-  CadQuery (Python). Uso livre para ONGs de proteção animal, com crédito
-  ao projeto.
+- **Comedouro elevado**: modelo autoral do projeto PatasPrint, modelado por
+  Pedro Martinez Ries no Bambu Studio. Uso livre para ONGs de proteção
+  animal, com crédito ao projeto.
 - **Modelos de terceiros**: cada um mantém a licença do autor original
-  (Creative Commons CC BY ou CC BY-NC), com nome do autor e link para a
-  página original exibidos junto ao modelo, no Catálogo.
+  (Creative Commons que permita adaptação: CC BY, CC BY-SA, CC BY-NC ou
+  CC BY-NC-SA), com nome do autor, link para a página original e crédito
+  da imagem exibidos junto ao modelo, no Catálogo.
 - **Dados públicos sobre Novo Hamburgo**: DBEA / Câmara de Vereadores de
-  Novo Hamburgo (12 ago. 2026) e Jornal do Comércio (2 jan. 2026).
+  Novo Hamburgo (12 ago. 2026), Câmara Municipal de Novo Hamburgo
+  (12 ago. 2026) e Jornal do Comércio (2 jan. 2026).
 - **Comparação de custo (cadeira de rodas comercial × versão 3D)**:
   Correio Braziliense (set. 2025).
 - **Bootstrap 5**: licença MIT — <https://getbootstrap.com>.
@@ -88,5 +83,5 @@ no rodapé de `index.html` pelo endereço real do repositório.
 
 ## Autor
 
-Pedro Ries — Atividade Extensionista II, Uninter, CST em Análise e
+Pedro Martinez Ries — Atividade Extensionista II, Uninter, CST em Análise e
 Desenvolvimento de Sistemas.
