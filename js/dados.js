@@ -12,17 +12,14 @@ const DADOS = {
   // Preço do filamento e da garrafa PET — usados na calculadora
   // ---------------------------------------------------------------------
   filamento: {
-    // TODO_PEDRO: preço real do PETG por kg que você usa/pesquisou (número, em R$)
-    precoPorKg: null,
-    // TODO_PEDRO: onde esse preço veio (loja, data da consulta)
-    fonte: "TODO_PEDRO: fonte do preço do filamento (loja + data)"
+    precoPorKg: 103.06,
+    fonte: "Média de Voolt3D, PrintaLot e National3D, consulta em 26 set. 2026"
   },
 
   garrafaPet: {
     // TODO_PEDRO: massa média de uma garrafa PET de 2L vazia, em gramas
     massaGramas: 20,
-    // TODO_PEDRO: fonte dessa massa (embalagem, artigo, pesagem própria)
-    fonte: "TODO_PEDRO: fonte da massa da garrafa PET"
+    fonte: "CNC Kitchen (HERMANN, Stefan), How strong is PET bottle filament?, acesso em 26 set. 2026"
   },
 
   // ---------------------------------------------------------------------
@@ -103,26 +100,26 @@ const DADOS = {
         // é adicionada automaticamente pelo site, não precisa incluir no nome do arquivo)
         montagem: "img/comedouro-montagem.jpg"
       },
+      // precoMercado: menor preço encontrado por porte (Mádela Pet e Mercado Livre, 26 set. 2026)
       portes: {
         P: {
           // TODO_PEDRO: massa (g) e tempo de impressão (min) do fatiamento no Bambu Studio, perfil A1 / PETG
           massaG: null,
           tempoMin: null,
           stl: "TODO_PEDRO: caminho do arquivo STL do porte P",
-          // Sem produto comercial direto equivalente a este item — por isso sem preço de mercado aqui
-          precoMercado: null
+          precoMercado: 64.00
         },
         M: {
           massaG: null,
           tempoMin: null,
           stl: "TODO_PEDRO: caminho do arquivo STL do porte M",
-          precoMercado: null
+          precoMercado: 104.90
         },
         G: {
           massaG: null,
           tempoMin: null,
           stl: "TODO_PEDRO: caminho do arquivo STL do porte G",
-          precoMercado: null
+          precoMercado: 165.00
         }
       }
     },
