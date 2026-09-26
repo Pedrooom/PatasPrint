@@ -17,7 +17,6 @@ const DADOS = {
   },
 
   garrafaPet: {
-    // TODO_PEDRO: massa média de uma garrafa PET de 2L vazia, em gramas
     massaGramas: 20,
     fonte: "CNC Kitchen (HERMANN, Stefan), How strong is PET bottle filament?, acesso em 26 set. 2026"
   },
@@ -89,7 +88,8 @@ const DADOS = {
       nome: "Comedouro elevado PatasPrint",
       tipo: "autoral", // "autoral" ou "comunidade"
       autor: "Pedro Ries — PatasPrint",
-      descricao: "Comedouro elevado modelado do zero em CadQuery (Python), em três portes. Reduz o esforço do pescoço do animal na hora de comer e beber.",
+      descricao: "Suporte elevado para tigela, modelado por Pedro Martinez Ries no Bambu Studio e impresso em PETG.",
+      aviso: "Use com tigela removível de inox ou cerâmica. Não coloque ração direto na peça.",
       link: null,
       licenca: "Autoral — uso livre para ONGs de proteção animal, com crédito ao projeto",
       downloads: null,
@@ -100,51 +100,107 @@ const DADOS = {
         // é adicionada automaticamente pelo site, não precisa incluir no nome do arquivo)
         montagem: "img/comedouro-montagem.jpg"
       },
+      // massaG e tempoMin: fatiamento no Bambu Studio, perfil A1 / PETG
       // precoMercado: menor preço encontrado por porte (Mádela Pet e Mercado Livre, 26 set. 2026)
       portes: {
         P: {
-          // TODO_PEDRO: massa (g) e tempo de impressão (min) do fatiamento no Bambu Studio, perfil A1 / PETG
-          massaG: null,
-          tempoMin: null,
-          stl: "TODO_PEDRO: caminho do arquivo STL do porte P",
+          nome: "Tamanho 1 (pequeno)",
+          massaG: 200.38,
+          tempoMin: 173,
+          stl: "https://drive.google.com/uc?export=download&id=1A7p4sZHBH5bUfA9nl6HrKFzDtKRblU-t",
           precoMercado: 64.00
         },
         M: {
-          massaG: null,
-          tempoMin: null,
-          stl: "TODO_PEDRO: caminho do arquivo STL do porte M",
+          nome: "Tamanho 2 (médio)",
+          massaG: 376.21,
+          tempoMin: 290,
+          stl: "https://drive.google.com/uc?export=download&id=1pbjEW_Nb5tfgvGTU3PVaYGw2oUsNlTnG",
           precoMercado: 104.90
-        },
-        G: {
-          massaG: null,
-          tempoMin: null,
-          stl: "TODO_PEDRO: caminho do arquivo STL do porte G",
-          precoMercado: 165.00
         }
       }
     },
 
-    // TODO_PEDRO: duplique este bloco para cada modelo do Printables que você escolher.
+    // Modelos de terceiros: para adicionar outro, duplique um dos blocos abaixo.
     // Regra do projeto: só entra no catálogo se a licença for CC BY ou CC BY-NC.
+    // massaG e tempoMin ficam null porque o perfil original é PLA.
+    // TODO_PEDRO: refatiar os três em PETG no Bambu Studio e preencher massaG e tempoMin.
     {
-      id: "modelo-comunidade-1",
-      nome: "TODO_PEDRO: nome do modelo no Printables",
+      id: "cadeira-rodas-gato",
+      nome: "Parametric Cat Wheelchair Generator",
       tipo: "comunidade",
-      autor: "TODO_PEDRO: nome do autor original",
-      descricao: "TODO_PEDRO: descrição curta do que a peça faz",
-      link: "TODO_PEDRO: link da página do modelo no Printables",
-      licenca: "TODO_PEDRO: CC BY ou CC BY-NC (confira na página do modelo)",
-      downloads: null, // TODO_PEDRO: número de downloads exibido no Printables
+      autor: "ac.design3D",
+      descricao: "Cadeira de rodas paramétrica, ajustável às medidas do animal.",
+      indicadoPara: "gato, cão pequeno, coelho",
+      plataforma: "MakerWorld",
+      link: "https://makerworld.com/en/models/3111262-parametric-cat-wheelchair-generator",
+      licenca: "CC BY-NC-SA 4.0",
+      downloads: 90,
+      impressoes: 20,
       imagens: {
-        render: "img/comunidade-1-render.jpg", // TODO_PEDRO: imagem do Printables (respeitando a licença)
-        montagem: null // TODO_PEDRO: opcional — só se você fizer uma simulação para este modelo
+        render: "img/cadeira-rodas-gato-render.jpg",
+        creditoImagem: "Imagem: ac.design3D, MakerWorld",
+        montagem: null
       },
       portes: {
         Unico: {
-          massaG: null, // TODO_PEDRO
-          tempoMin: null, // TODO_PEDRO
-          stl: "TODO_PEDRO: link ou caminho do STL",
-          precoMercado: null // TODO_PEDRO: preço de um equivalente pronto no mercado, se houver
+          massaG: null,
+          tempoMin: null,
+          stl: "https://makerworld.com/en/models/3111262-parametric-cat-wheelchair-generator",
+          precoMercado: null
+        }
+      }
+    },
+    {
+      id: "tala-pata-dianteira",
+      nome: "Dog Splint Front V1",
+      tipo: "comunidade",
+      autor: "TheLayerSlayer",
+      descricao: "Tala para pata dianteira de cão.",
+      aviso: "Uso somente com orientação veterinária.",
+      indicadoPara: "cão médio",
+      plataforma: "MakerWorld",
+      link: "https://makerworld.com/en/models/2835397-dog-splint-front-v1",
+      licenca: "CC BY-NC-SA 4.0",
+      downloads: 215,
+      impressoes: 96,
+      imagens: {
+        render: "img/tala-pata-dianteira-render.jpg",
+        creditoImagem: "Imagem: TheLayerSlayer, MakerWorld",
+        montagem: null
+      },
+      portes: {
+        Unico: {
+          massaG: null,
+          tempoMin: null,
+          stl: "https://makerworld.com/en/models/2835397-dog-splint-front-v1",
+          precoMercado: null
+        }
+      }
+    },
+    {
+      id: "tala-pata-traseira",
+      nome: "Dog splint rear leg",
+      tipo: "comunidade",
+      autor: "TheLayerSlayer",
+      descricao: "Tala para pata traseira de cão.",
+      aviso: "Uso somente com orientação veterinária.",
+      indicadoPara: "cão médio a grande",
+      plataforma: "MakerWorld",
+      link: "https://makerworld.com/en/models/2843857-dog-splint-rear-leg",
+      licenca: "CC BY-NC-SA 4.0",
+      downloads: 145,
+      impressoes: 46,
+      imagens: {
+        render: "img/tala-pata-traseira-render.jpg",
+        creditoImagem: "Imagem: TheLayerSlayer, MakerWorld",
+        montagem: null
+      },
+      portes: {
+        Unico: {
+          massaG: null,
+          tempoMin: null,
+          stl: "https://makerworld.com/en/models/2843857-dog-splint-rear-leg",
+          precoMercado: null
         }
       }
     }

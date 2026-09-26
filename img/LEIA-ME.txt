@@ -11,9 +11,18 @@ Imagens esperadas (nomes usados em js/dados.js):
     O site já adiciona sozinho a legenda "Simulação: modelo 3D sobreposto
     a foto real" — não precisa incluir isso na imagem.
 
-- comunidade-1-render.jpg
-    Imagem do primeiro modelo de terceiro escolhido no Printables
-    (respeitando a licença do modelo).
+Modelos de terceiros, escolhidos nos repositórios abertos (MakerWorld e
+Printables), respeitando a licença de cada modelo. O crédito da imagem já
+aparece no site, a partir do campo "creditoImagem" em js/dados.js:
+
+- cadeira-rodas-gato-render.jpg
+    Parametric Cat Wheelchair Generator (ac.design3D, MakerWorld).
+
+- tala-pata-dianteira-render.jpg
+    Dog Splint Front V1 (TheLayerSlayer, MakerWorld).
+
+- tala-pata-traseira-render.jpg
+    Dog splint rear leg (TheLayerSlayer, MakerWorld).
 
 Ao adicionar um novo modelo de terceiro em js/dados.js, inclua a imagem
 correspondente aqui e aponte o caminho no campo "imagens" daquele modelo.

@@ -22,7 +22,8 @@
     return '<span class="dado-pendente">a definir</span>';
   }
 
-  function nomePorte(sigla) {
+  function nomePorte(sigla, porte) {
+    if (porte && porte.nome) return porte.nome;
     if (sigla === "Unico") return "Tamanho único";
     return "Porte " + sigla;
   }
@@ -81,7 +82,7 @@
     container.innerHTML = DADOS.modelos
       .map(function (modelo) {
         const portesTexto = Object.keys(modelo.portes)
-          .map(nomePorte)
+          .map(function (sigla) { return nomePorte(sigla, modelo.portes[sigla]); })
           .join(" · ");
 
         let linhaOrigem = "";
@@ -91,12 +92,13 @@
             : textoPendente();
           const downloadsHtml = (modelo.downloads === null || modelo.downloads === undefined)
             ? textoPendente()
-            : formatador.format(modelo.downloads);
+            : formatador.format(modelo.downloads) +
+              (modelo.impressoes ? " downloads · " + formatador.format(modelo.impressoes) + " impressões" : "");
           linhaOrigem =
             '<p class="ficha-linha"><strong>Autor:</strong> ' + modelo.autor + "</p>" +
             '<p class="ficha-linha"><strong>Origem:</strong> ' + linkHtml + "</p>" +
             '<p class="ficha-linha"><strong>Licença:</strong> ' + modelo.licenca + "</p>" +
-            '<p class="ficha-linha"><strong>Downloads no Printables:</strong> ' + downloadsHtml + "</p>";
+            '<p class="ficha-linha"><strong>No ' + modelo.plataforma + ':</strong> ' + downloadsHtml + "</p>";
         } else {
           linhaOrigem = '<p class="ficha-linha"><strong>Autor:</strong> ' + modelo.autor + "</p>";
         }
@@ -108,14 +110,29 @@
             "</figure>"
           : "";
 
+        const indicadoHtml = modelo.indicadoPara
+          ? '<p class="ficha-linha"><strong>Indicado para:</strong> ' + modelo.indicadoPara + "</p>"
+          : "";
+
+        const avisoHtml = modelo.aviso
+          ? '<p class="aviso-modelo"><strong>Atenção:</strong> ' + modelo.aviso + "</p>"
+          : "";
+
+        const creditoHtml = modelo.imagens.creditoImagem
+          ? '<p class="credito-imagem">' + modelo.imagens.creditoImagem + "</p>"
+          : "";
+
         return (
           '<div class="col-md-6 col-lg-4">' +
             '<article class="card-modelo">' +
               imagemComFallback(modelo.imagens.render, "Render 3D de " + modelo.nome, "imagem-render") +
+              creditoHtml +
               '<div class="card-modelo-corpo">' +
                 badgeTipo(modelo) +
                 "<h3>" + modelo.nome + "</h3>" +
                 "<p>" + modelo.descricao + "</p>" +
+                avisoHtml +
+                indicadoHtml +
                 '<p class="ficha-linha"><strong>Portes disponíveis:</strong> ' + portesTexto + "</p>" +
                 linhaOrigem +
                 montagemHtml +
@@ -161,7 +178,7 @@
 
     selectPorte.innerHTML = Object.keys(modelo.portes)
       .map(function (sigla) {
-        return '<option value="' + sigla + '">' + nomePorte(sigla) + "</option>";
+        return '<option value="' + sigla + '">' + nomePorte(sigla, modelo.portes[sigla]) + "</option>";
       })
       .join("");
   }
@@ -265,13 +282,15 @@
   function popularSelectPorteFormulario() {
     const select = document.getElementById("form-porte");
     if (!select) return;
-    const portes = new Set();
+    const portes = new Map();
     DADOS.modelos.forEach(function (modelo) {
-      Object.keys(modelo.portes).forEach(function (sigla) { portes.add(sigla); });
+      Object.keys(modelo.portes).forEach(function (sigla) {
+        if (!portes.has(sigla)) portes.set(sigla, nomePorte(sigla, modelo.portes[sigla]));
+      });
     });
     select.innerHTML = Array.from(portes)
-      .map(function (sigla) {
-        return '<option value="' + sigla + '">' + nomePorte(sigla) + "</option>";
+      .map(function (par) {
+        return '<option value="' + par[0] + '">' + par[1] + "</option>";
       })
       .join("");
   }

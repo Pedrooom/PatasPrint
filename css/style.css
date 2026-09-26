@@ -304,6 +304,24 @@ a:focus {
   font-style: italic;
 }
 
+.aviso-modelo {
+  background-color: #FBE7D3;
+  border-left: 3px solid var(--cor-acento);
+  color: var(--cor-acento-escuro);
+  border-radius: 4px;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+
+.credito-imagem {
+  font-size: 0.75rem;
+  color: var(--cor-texto-suave);
+  font-style: italic;
+  padding: 0.35rem 1.5rem 0;
+  margin: 0;
+}
+
 .figura-simulacao {
   margin: 0.6rem 0 0;
 }

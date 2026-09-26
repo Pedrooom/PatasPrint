@@ -59,7 +59,7 @@ Todos os dados que faltam estão marcados com `TODO_PEDRO` dentro de
 - preço do filamento PETG por kg, com fonte;
 - massa média de uma garrafa PET de 2L vazia, com fonte;
 - links, imagens, autor, licença e número de downloads de cada modelo de
-  terceiro escolhido no Printables;
+  terceiro escolhido nos repositórios abertos (MakerWorld e Printables);
 - ID do formulário no Formspree.
 
 Enquanto o ID do Formspree não for preenchido, o site avisa na seção
