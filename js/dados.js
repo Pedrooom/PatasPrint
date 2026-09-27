@@ -43,7 +43,7 @@ const DADOS = {
   ],
 
   // ---------------------------------------------------------------------
-  // Etapas do processo PET → filamento (etapa futura do projeto, RF19/RF20)
+  // Etapas do processo PET → filamento (seção "Faça você mesmo", RF19/RF20)
   // ---------------------------------------------------------------------
   etapasPet: [
     { titulo: "Coleta", texto: "Juntar garrafas PET descartadas na comunidade." },

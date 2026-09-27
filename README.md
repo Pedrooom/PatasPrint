@@ -12,8 +12,8 @@ O site reúne:
   com licença Creative Commons);
 - uma calculadora que estima filamento, garrafas PET equivalentes e custo
   de cada peça;
-- um resumo do processo de transformar garrafas PET em filamento
-  (etapa futura do projeto);
+- um guia "faça você mesmo" para transformar garrafas PET em filamento:
+  etapas, materiais, vídeos de referência e cuidados de segurança;
 - um contato por WhatsApp para quem precisa de ajuda para imprimir ou
   montar uma peça.
 
