@@ -54,6 +54,23 @@ const DADOS = {
   ],
 
   // ---------------------------------------------------------------------
+  // Materiais para montar a máquina de filamento de garrafa PET
+  // origem: "reaproveitar", "comprar", "reaproveitar ou comprar" ou "reaproveitar ou montar".
+  // Só os itens com origem exatamente "comprar" contam como não vindos de sucata.
+  // ---------------------------------------------------------------------
+  materiaisPet: [
+    { nome: "Garrafas PET usadas", origem: "reaproveitar" },
+    { nome: "Tábua de madeira como base", origem: "reaproveitar" },
+    { nome: "Cortador de fita: lâmina de estilete presa num suporte", origem: "reaproveitar ou montar" },
+    { nome: "Motor com redução, de impressora velha, scanner ou limpador de para-brisa", origem: "reaproveitar" },
+    { nome: "Fonte de computador ou notebook antiga", origem: "reaproveitar" },
+    { nome: "Kit hotend 1,75 mm: bico, resistência e termistor", origem: "comprar" },
+    { nome: "Controlador de temperatura tipo W1209", origem: "comprar" },
+    { nome: "Carretel vazio", origem: "reaproveitar" },
+    { nome: "Óculos de proteção e luva térmica", origem: "reaproveitar ou comprar" }
+  ],
+
+  // ---------------------------------------------------------------------
   // Catálogo de dispositivos
   // ---------------------------------------------------------------------
   modelos: [

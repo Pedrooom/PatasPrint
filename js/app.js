@@ -292,6 +292,30 @@
       .join("");
   }
 
+  function montarMateriaisPet() {
+    const container = document.getElementById("lista-materiais-pet");
+    const nota = document.getElementById("nota-materiais-pet");
+    if (!container) return;
+    container.innerHTML = DADOS.materiaisPet
+      .map(function (item) {
+        const comprar = item.origem === "comprar";
+        return (
+          '<li class="material-pet' + (comprar ? " material-comprar" : "") + '">' +
+            '<span class="material-nome">' + item.nome + "</span>" +
+            '<span class="material-origem">' + item.origem + "</span>" +
+          "</li>"
+        );
+      })
+      .join("");
+    if (nota) {
+      const total = DADOS.materiaisPet.length;
+      const sucata = DADOS.materiaisPet.filter(function (item) { return item.origem !== "comprar"; }).length;
+      nota.textContent =
+        sucata + " dos " + total + " itens podem vir de sucata. " +
+        "Cada garrafa rende cerca de " + formatador.format(DADOS.garrafaPet.massaGramas) + " g de filamento.";
+    }
+  }
+
   // -----------------------------------------------------------------
   // Nota abaixo do tamanho, na calculadora: para quem o modelo é indicado
   // -----------------------------------------------------------------
@@ -328,6 +352,7 @@
     montarProblema();
     montarCatalogo();
     montarEtapasPet();
+    montarMateriaisPet();
     configurarMenu();
 
     popularSelectModelos();

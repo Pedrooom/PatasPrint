@@ -482,6 +482,77 @@ a:focus {
 /* ---------------------------------------------------------------------
    Ajuda
    --------------------------------------------------------------------- */
+.bloco-pet {
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+}
+
+.bloco-pet h3 {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.lista-materiais-pet {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.material-pet {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background-color: var(--cor-fundo);
+  font-size: 0.92rem;
+}
+
+.material-origem {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  background-color: #DCEAE6;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.material-comprar {
+  background-color: #FBE7D3;
+  border-left: 3px solid var(--cor-acento);
+}
+
+.material-comprar .material-origem {
+  color: #fff;
+  background-color: var(--cor-acento-escuro);
+}
+
+.nota-materiais-pet {
+  margin-bottom: 0;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+.botoes-video {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.aviso-pet {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  max-width: 60rem;
+}
+
 .painel-contato {
   background-color: #fff;
   border: 1px solid var(--cor-borda);
