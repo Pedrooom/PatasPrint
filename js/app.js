@@ -126,8 +126,15 @@
           downloadHtml = '<div class="downloads-modelo">' + downloadHtml + "</div>";
         }
 
-        const indicadoHtml = modelo.indicadoPara
-          ? '<p class="ficha-linha"><strong>Indicado para:</strong> ' + modelo.indicadoPara + "</p>"
+        const indicadoPorTamanho = Object.keys(modelo.portes)
+          .filter(function (sigla) { return modelo.portes[sigla].indicadoPara; })
+          .map(function (sigla) {
+            return nomePorte(sigla, modelo.portes[sigla]) + ": " + modelo.portes[sigla].indicadoPara;
+          })
+          .join(" · ");
+        const indicadoTexto = modelo.indicadoPara || indicadoPorTamanho;
+        const indicadoHtml = indicadoTexto
+          ? '<p class="ficha-linha"><strong>Indicado para:</strong> ' + indicadoTexto + "</p>"
           : "";
 
         const avisoHtml = modelo.aviso
@@ -141,7 +148,7 @@
         return (
           '<div class="col-md-6 col-lg-4">' +
             '<article class="card-modelo">' +
-              imagemComFallback(modelo.imagens.render, "Imagem de " + modelo.nome, "imagem-render") +
+              imagemComFallback(modelo.imagens.render, modelo.imagens.alt || "Imagem de " + modelo.nome, "imagem-render") +
               creditoHtml +
               '<div class="card-modelo-corpo">' +
                 badgeTipo(modelo) +
@@ -291,9 +298,12 @@
   function atualizarNotaTamanho() {
     const container = document.getElementById("nota-tamanho");
     const selectModelo = document.getElementById("calc-modelo");
+    const selectPorte = document.getElementById("calc-porte");
     if (!container || !selectModelo) return;
     const modelo = DADOS.modelos.find(function (m) { return m.id === selectModelo.value; });
-    container.textContent = modelo && modelo.indicadoPara ? "Indicado para: " + modelo.indicadoPara : "";
+    const porte = modelo && selectPorte ? modelo.portes[selectPorte.value] : null;
+    const indicado = (porte && porte.indicadoPara) || (modelo && modelo.indicadoPara);
+    container.textContent = indicado ? "Indicado para: " + indicado : "";
   }
 
   // -----------------------------------------------------------------
@@ -330,6 +340,11 @@
         popularSelectPortes();
         atualizarNotaTamanho();
       });
+    }
+
+    const selectPorte = document.getElementById("calc-porte");
+    if (selectPorte) {
+      selectPorte.addEventListener("change", atualizarNotaTamanho);
     }
 
     const formCalculadora = document.getElementById("form-calculadora");

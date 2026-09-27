@@ -62,14 +62,15 @@ const DADOS = {
       nome: "Comedouro elevado PatasPrint",
       tipo: "autoral", // "autoral" ou "comunidade"
       autor: "Pedro Martinez Ries — PatasPrint",
-      descricao: "Suporte elevado para tigela, modelado por Pedro Martinez Ries no Bambu Studio e impresso em PETG.",
+      descricao: "Suporte elevado para tigela, modelado por Pedro Martinez Ries no Bambu Studio e impresso em PETG. Tamanho 1 já impresso e testado: saiu sem ajustes, no tempo previsto.",
       aviso: "Use com tigela removível de inox ou cerâmica. Não coloque ração direto na peça.",
       link: null,
       licenca: "Autoral — uso livre para ONGs de proteção animal, com crédito ao projeto",
       formatoArquivo: ".3mf", // projeto do Bambu Studio, já com o perfil de impressão
       downloads: null,
       imagens: {
-        render: "img/comedouro-render.jpg"
+        render: "img/comedouro-impresso.jpg",
+        alt: "Suporte para comedouro tamanho 1 impresso em PETG azul"
       },
       // arquivo: link de download direto do Google Drive
       // massaG e tempoMin: fatiamento no Bambu Studio, perfil A1 / PETG
@@ -77,6 +78,7 @@ const DADOS = {
       portes: {
         P: {
           nome: "Tamanho 1 (pequeno)",
+          indicadoPara: "cão pequeno ou gato",
           massaG: 200.38,
           tempoMin: 173,
           arquivo: "https://drive.google.com/uc?export=download&id=1A7p4sZHBH5bUfA9nl6HrKFzDtKRblU-t",
@@ -84,6 +86,7 @@ const DADOS = {
         },
         M: {
           nome: "Tamanho 2 (médio)",
+          indicadoPara: "cão médio",
           massaG: 376.21,
           tempoMin: 290,
           arquivo: "https://drive.google.com/uc?export=download&id=1pbjEW_Nb5tfgvGTU3PVaYGw2oUsNlTnG",
@@ -96,7 +99,7 @@ const DADOS = {
     // Regra do projeto: só entra no catálogo modelo com licença Creative Commons que
     // permita adaptação (CC BY, CC BY-SA, CC BY-NC ou CC BY-NC-SA). Licenças ND ficam de fora.
     // massaG e tempoMin: perfil de impressão do designer no MakerWorld (feito em PLA;
-    // a massa em PETG é a mesma). Consulta em 26 set. 2026.
+    // em PETG a massa fica cerca de 2% maior). Consulta em 26 set. 2026.
     {
       id: "cadeira-rodas-gato",
       nome: "Parametric Cat Wheelchair Generator",
@@ -107,7 +110,7 @@ const DADOS = {
       plataforma: "MakerWorld",
       link: "https://makerworld.com/en/models/3111262-parametric-cat-wheelchair-generator",
       licenca: "CC BY-NC-SA 4.0",
-      fonteMassa: "perfil de impressão do designer no MakerWorld (a massa em PETG é a mesma)",
+      fonteMassa: "perfil de impressão do designer no MakerWorld, feito em PLA; em PETG a massa fica cerca de 2% maior",
       // Referência de preço de mercado para cadeiras de rodas, mostrada na calculadora
       referenciaMercado: {
         texto: "Uma cadeira de rodas comercial para cães custa a partir de R$ 1.200. Uma versão equivalente impressa em 3D sai por cerca de R$ 448,81.",
@@ -139,7 +142,7 @@ const DADOS = {
       plataforma: "MakerWorld",
       link: "https://makerworld.com/en/models/2835397-dog-splint-front-v1",
       licenca: "CC BY-NC-SA 4.0",
-      fonteMassa: "perfil de impressão do designer no MakerWorld (a massa em PETG é a mesma)",
+      fonteMassa: "perfil de impressão do designer no MakerWorld, feito em PLA; em PETG a massa fica cerca de 2% maior",
       downloads: 215,
       impressoes: 96,
       imagens: {
@@ -167,7 +170,7 @@ const DADOS = {
       plataforma: "MakerWorld",
       link: "https://makerworld.com/en/models/2843857-dog-splint-rear-leg",
       licenca: "CC BY-NC-SA 4.0",
-      fonteMassa: "perfil de impressão do designer no MakerWorld (a massa em PETG é a mesma)",
+      fonteMassa: "perfil de impressão do designer no MakerWorld, feito em PLA; em PETG a massa fica cerca de 2% maior",
       downloads: 145,
       impressoes: 46,
       imagens: {

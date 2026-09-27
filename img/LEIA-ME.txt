@@ -1,7 +1,7 @@
 Imagens do catálogo. Os nomes abaixo são os usados em js/dados.js.
 
-- comedouro-render.jpg
-    Render 3D do comedouro elevado.
+- comedouro-impresso.jpg
+    Foto do suporte para comedouro tamanho 1 impresso em PETG azul.
 
 Modelos de terceiros, escolhidos nos repositórios abertos (MakerWorld e
 Printables), respeitando a licença de cada modelo. O crédito da imagem já
